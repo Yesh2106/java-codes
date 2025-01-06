@@ -1,34 +1,31 @@
-public class Main
-{
-	public static void main(String[] args) throws InterruptedException
-	{
-	    int h=12;
-	    int m=12;
-	    int s=12;
-	    
-	    while(true)
-	    {
-		System.out.printf("\r%02d : %02d : %02d",h,m,s);
-		System.out.flush();
-		Thread.sleep(1000);
-		
-		s=s+1;
-		
-		if(s==60)
-		{
-		    m=m+1;
-		    s=0;
-		}
-		else if(m==60)
-		{
-		    h=h+1;
-		    m=0;
-		}
-		else if(h==23)
-		{
-		    s=0;
-		    m=0;
-		}
-		}
-}
+public class Main {
+    public static void main(String[] args) throws InterruptedException {
+        int h = 23; 
+        int m = 59; 
+        int s = 58; 
+
+        while (true) {
+            System.out.printf("\r%02d : %02d : %02d", h, m, s);
+            System.out.flush();
+            Thread.sleep(1000);
+
+            s = s + 1;
+
+            if (s == 60) {
+                m = m + 1;
+                s = 0;
+            }
+
+            if (m == 60) {
+                h = h + 1;
+                m = 0;
+            }
+
+            if (h == 23){
+                h = 0;
+                s = 0;
+                m = 0;
+            }
+        }
+    }
 }
